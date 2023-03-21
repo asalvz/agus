@@ -2094,11 +2094,16 @@ top: 100px;
           height: 84px;
           width: 280px
         }
-	      .card {
-  width: 33%;
+	    .card {
+  width: 50%; /* Cambia el ancho según lo que necesites */
+  margin: 0 auto; /* Centra horizontalmente la tarjeta */
   border: 2px solid orange;
   background-color: transparent;
+  overflow: auto; /* Agrega barras de desplazamiento */
+  max-height: 200px; /* Establece la altura máxima del contenido */
 }
+
+
 
   
         @media (min-width: 768px) {
