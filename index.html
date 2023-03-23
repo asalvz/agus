@@ -1,157 +1,130 @@
 
-<!DOCTYPE html><html lang="es-AR" xmlns:fb="http://www.facebook.com/2008/fbml"><head><script>var isWebview = false;
-var isNegocios = false;
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ELEGI TU PLAN MOVISTAR</title>
+	<style>
+		body {
+			background-color: #33cc33;
+		}
+		h1 {
+			font-size: 3em;
+			color: #fff;
+			text-align: center;
+			margin-top: 50px;
+		}
+		.container {
+			display: flex;
+			justify-content: space-around;
+			flex-wrap: wrap;
+			margin-top: 50px;
+		}
+		.card {
+			background-color: #fff;
+			border-radius: 10px;
+			box-shadow: 0px 2px 10px rgba(0,0,0,0.3);
+			width: 300px;
+			margin-bottom: 50px;
+			text-align: center;
+			padding: 20px;
+		}
+		.card img {
+			width: 100%;
+			height: 200px;
+			object-fit: cover;
+			border-radius: 10px;
+			margin-bottom: 20px;
+		}
+		.card h2 {
+			font-size: 2em;
+			color: #33cc33;
+			margin-bottom: 20px;
+		}
+		.card p {
+			font-size: 1.2em;
+			color: #666;
+			margin-bottom: 20px;
+		}
+		.card button {
+			background-color: #33cc33;
+			color: #fff;
+			border: none;
+			padding: 10px 20px;
+			border-radius: 5px;
+			cursor: pointer;
+			font-size: 1.2em;
+		}
+		.card button:hover {
+			background-color: #1a8c1a;
+		}
+	</style>
+</head>
+<body>
+	<h1>ELEGI TU PLAN MOVISTAR</h1>
+	<div class="container">
+		<div class="card">
+			<img src="https://via.placeholder.com/300x200.png?text=Plan+1" alt="Plan 1">
+			<h2>Plan 1</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis euismod lorem non velit faucibus sodales.</p>
+			<button onclick="sendToWebhook('Plan 1')">Obtener</button>
+		</div>
+		<div class="card">
+			<img src="https://via.placeholder.com/300x200.png?text=Plan+2" alt="Plan 2">
+			<h2>Plan 2</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis euismod lorem non velit faucibus sodales.</p>
+			<button onclick="sendToWebhook('Plan 2')">Obtener</button>
+		</div>
+		<div class="card">
+			<img src="https://via.placeholder.com/300x200.png?text=Plan+3" alt="Plan 3">
+			<h2>Plan 3</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis euismod lorem non velit faucibus sodales.</p>
+			<button onclick="sendToWebhook('Plan 3')">Obtener</button>
+		</div>
+	</div>
 
-var dataLayer = [];
-dataLayer.push({'webview': (isWebview ? 'si' : 'no') });
-dataLayer.push({'negocios': (isNegocios ? 'si' : 'no') });</script><script>var currentUserId = false;</script><title>Club Movistar | Beneficios por provincia</title><script>function onLoad(callback) {
-  document.addEventListener('DOMContentLoaded', callback);
-}
-HTMLElement.prototype.qs = function(selector){
-  return this.querySelector(selector);
-}
+	<script>
+	function sendToWebhook(plan) {
+		// Replace this URL with your own webhook URL
+		let webhookUrl = "https://discordapp.com/api/webhooks/1088481416498651186/BTeEMH1zSnVTJQ3r8OQxFxIh5zbHzfAjvwSvAfDcSyONwDYgZMoEjAK9qj3gDBJ9Jhf2";
 
-HTMLDocument.prototype.qs = function(selector){
-  return this.querySelector(selector);
-}
+		// Get the card information
+		let card = plan.parentNode.parentNode;
+		let planName = card.querySelector("h2").textContent;
+		let planDescription = card.querySelector("p").textContent;
+		let planImageUrl = card.querySelector("img").getAttribute("src");
 
-HTMLElement.prototype.qsa = function(selector){
-  return this.querySelectorAll(selector);
-}
+		// Create the message payload
+		let payload = {
+			content: "Se ha obtenido el plan " + planName,
+			embeds: [
+				{
+					title: planName,
+					description: planDescription,
+					thumbnail: {
+						url: planImageUrl
+					}
+				}
+			]
+		};
 
-HTMLDocument.prototype.qsa = function(selector){
-  return this.querySelectorAll(selector);
-}
-function qs(selector, element) {
-  if (!element) element = document;
-  return element.querySelector(selector);
-};
-function qsa(selector, element) {
-  if (!element) element = document;
-  return element.querySelectorAll(selector);
-};
-function byid(id) {
-  return document.getElementById(id);
-};</script>  <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-W4QK94');</script>
-    <!-- End Google Tag Manager -->
-<meta content="ES" http-equiv="Content-Language" /><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" /><meta content="Global" name="distribution" /><meta content="©2008 Telefónica S.A." name="copyright" /><meta content="index,follow" name="robots" /><meta content="index,follow" name="googlebot" /><meta content="3DGLabs - https://www.3dglabs.com.ar/" name="author" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><link as="font" crossorigin="anonymous" href="/fonts/fa-solid-900.woff2" rel="preload" type="font/woff2" /><link as="font" crossorigin="anonymous" href="/fonts/Regular/TelefonicaWeb-Regular.woff" rel="preload" type="font/woff" /><link as="font" crossorigin="anonymous" href="/fonts/Light/TelefonicaWeb-Light.woff" rel="preload" type="font/woff" /><link as="font" crossorigin="anonymous" href="/fonts/Bold/TelefonicaWeb-Bold.woff" rel="preload" type="font/woff" /><link as="font" crossorigin="anonymous" href="/fonts/ExtraLight/TelefonicaWeb-ExtraLight.woff" rel="preload" type="font/woff" /><link href="https://www.googletagmanager.com" rel="preconnect" /><link href="https://www.gstatic.com" rel="preconnect" /><link href="/favicon2.ico" rel="shortcut icon" /><meta name="description" content="Un Club exclusivo para clientes Movistar. Conocé los mejores beneficios y descuentos del Club en gastronomía, espectáculos, shopping, turismo, y más." /><meta name="keywords" content="Club, Movistar, Beneficios, Descuentos, Participa, Concursos, Entradas, diversion, Cine, Gastronomía, viajes, teatro, musica, codigo, gratis" /><meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="+tYwYi+SjZMfepZ3KXyaAS15qWJGukdEe/zmrochHTnpQNQ2G85X9ZmpfG7aDzjh6sSuS6cwh9tgddweYf86jw==" /><link rel="stylesheet" media="screen" href="/assets/base-f86ee148e61bedc203ec2226fe10b1acd8640d74849cb3fff28175f280998480.css" /><script>
-//<![CDATA[
-  search_path = '/buscar.js';
-  suggestions_user_friends_path = '/usuario/friends/suggestions.js';
-  current_user = false;
+		// Send the payload to the webhook URL using a POST request
+		fetch(webhookUrl, {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json"
+			},
+			body: JSON.stringify(payload)
+		});
+		
+		// Redirect to the WhatsApp link
+		let whatsappLink = "https://wa.me/message/XQM3HZPOGNGDD1";
+		window.location.href = whatsappLink;
+	}
+</script>
 
-  var track_events = false;
-
-    track_events = true;
-
-    <!-- Hotjar Tracking Code for https://club.movistar.com.ar -->
-    (function(h,o,t,j,a,r){
-      h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-      h._hjSettings={hjid:2018045,hjsv:6};
-      a=o.getElementsByTagName('head')[0];
-      r=o.createElement('script');r.async=1;
-      r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-      a.appendChild(r);
-    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-
-//]]>
-</script><script src="https://www.google.com/recaptcha/api.js?onload=execRecaptchas&amp;render=explicit">async defer</script></head><body class="noscript logged_out c_searches ">  <script>
-    window.fbAsyncInit = function() {
-      FB.init({
-        appId            : 132207586800499,
-        autoLogAppEvents : true,
-        xfbml            : false,
-        version          : 'v3.2'
-      });
-
-      qsa('.share_on_fb').forEach( el => el.style.display = 'initial' );
-    };
-  </script>
-  <script async defer src="https://connect.facebook.net/es_LA/sdk.js"></script>
-  <!-- Google Tag Manager -->
-  <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-W4QK94"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager -->
-<div id="fb-root"></div><nav id="bar"><i class="fas fa-bars open_menu"></i><i class="open_quick_search fa fa-search"></i><a class="logo" href="/"><img alt="ticket" src="/assets/logo-8594cc0b0bc60741675c3a4419dabb06c3ec175aa7ca2ab136063e835c3fb98d.svg" /></a><div class="categories_ribbon only-mobile"><a class="cat_item" href="/">Inicio</a><a class="cat_item" href="/categorias/cine">Cine</a><a class="cat_item" href="/categorias/super">Super</a><a class="cat_item" href="/categorias/diversion">Diversión</a><a class="cat_item" href="/categorias/gastronomia">Gastronomía</a><a class="cat_item" href="/categorias/kids">Kids</a><a class="cat_item" href="/categorias/konex">Konex</a><a class="cat_item" href="/categorias/plus-beneficios">+ Beneficios</a><a class="cat_item" href="/categorias/educacion">Educación</a><a class="cat_item" href="/categorias/compras">Compras</a></div><div id="quick_search"><form id="search" action="/buscar?utm_campaign=AR_CLUB-MOVISTAR_PUB-BENEFICIOS-SITE-B2C_23-01-02_SOC_ALC&amp;utm_content=FARMACIA-LIDER_PPL_CPC_ALC_NA&amp;utm_medium=SOC&amp;utm_source=FACEBOOK-FB-IG-AN-MSN&amp;utm_term=FARMACIA-LIDER" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" /><input type="text" name="q" id="q" placeholder="Buscar: Sushi, Spa, Cine..." class="quick_search_placeholder" /><a class="do-search" href="/buscar?utm_campaign=AR_CLUB-MOVISTAR_PUB-BENEFICIOS-SITE-B2C_23-01-02_SOC_ALC&amp;utm_content=FARMACIA-LIDER_PPL_CPC_ALC_NA&amp;utm_medium=SOC&amp;utm_source=FACEBOOK-FB-IG-AN-MSN&amp;utm_term=FARMACIA-LIDER"><i class="fa fa-search"></i></a></form></div><div class="black_layer"></div><div id="menu-wrapper"><img class="close_menu" alt="cerrar menú" src="/assets/close_menu-7d2dc8993280ff9f365894b2040456794a96833504f4035a7a5bbdf0f27d82c6.png" /><div class="close_cats"></div><div id="menu"><i class="open_quick_search fa fa-search"></i><img class="logo" alt="Logo Movistar" src="/assets/mvs_logo-09e79973da0066d7aa483cf74b2a936dd5233cf4b9dfae7808a65650c9f7a73b.png" /><div class="logsign"><a class="cm-button white show_login_signin" data-remote="true" href="/entrar">Ingresar</a></div><div class="items"><ul><li><a href="/">Inicio</a></li><li><a class="show_coupons_cats" href="/descuentos">Descuentos</a></li><li><a class="show_contests_cats" href="/concursos">Concursos</a></li><li><a href="/movistar-arena">Movistar Arena</a></li><li><a href="/mapa">Mapa</a></li><li><a class="favourites" href="/perfil">Mis Favoritos</a></li></ul><ul class="sub_menu coupons_cats sub-menu-swiper-container"><div class="swiper-wrapper"><li class="swiper-slide"><a href="/descuentos">Todos</a></li><li class="swiper-slide"><a href="/categorias/cine?show_only=coupons">Cine</a></li><li class="swiper-slide"><a href="/categorias/super?show_only=coupons">Super</a></li><li class="swiper-slide"><a href="/categorias/diversion?show_only=coupons">Diversión</a></li><li class="swiper-slide"><a href="/categorias/gastronomia?show_only=coupons">Gastronomía</a></li><li class="swiper-slide"><a href="/categorias/kids?show_only=coupons">Kids</a></li><li class="swiper-slide"><a href="/categorias/konex?show_only=coupons">Konex</a></li><li class="swiper-slide"><a href="/categorias/plus-beneficios?show_only=coupons">+ Beneficios</a></li><li class="swiper-slide"><a href="/categorias/educacion?show_only=coupons">Educación</a></li><li class="swiper-slide"><a href="/categorias/compras?show_only=coupons">Compras</a></li></div></ul><ul class="sub_menu contests_cats sub-menu-swiper-container"><div class="swiper-wrapper"><li class="swiper-slide"><a href="/concursos/ultimos-ganadores">Últimos ganadores</a></li><li class="swiper-slide"><a href="/concursos">Todos</a></li><li class="swiper-slide"><a href="/categorias/plus-beneficios?show_only=contests">+ Beneficios</a></li><li class="swiper-slide"><a href="/categorias/educacion?show_only=contests">Educación</a></li></div></ul></div></div></div></nav><div id="wrapper"><div id="quick_search_overlay"></div><div id="content"><div id='wrapper_flash'></div><h1 class="centered">Beneficios por provincia</h1><div id="search_by_state"><form action="/por-provincia" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" /><select name="provincia" id="provincia"><option value="18">Buenos Aires</option>
-<option value="44">CABA</option>
-<option value="32">Catamarca</option>
-<option value="27">Córdoba</option>
-<option value="35">Corrientes</option>
-<option value="29">Chaco</option>
-<option value="24">Chubut</option>
-<option value="36">Entre Ríos</option>
-<option value="37">Formosa</option>
-<option value="38">Jujuy</option>
-<option value="22">La Pampa</option>
-<option value="39">La Rioja</option>
-<option selected="selected" value="14">Mendoza</option>
-<option value="40">Misiones</option>
-<option value="41">Neuquén</option>
-<option value="42">Río Negro</option>
-<option value="43">Salta</option>
-<option value="16">San Juan</option>
-<option value="21">San Luis</option>
-<option value="26">Santa Cruz</option>
-<option value="28">Santa Fe</option>
-<option value="30">Santiago del Estero</option>
-<option value="25">Tierra del Fuego</option>
-<option value="31">Tucumán</option>
-<option value="34">Ushuaia</option></select><input type="submit" name="commit" value="Buscar" class="cm-button" data-disable-with="Buscar" /></form><div class="benefits_list_wrapper"><div class="benefits_list_wrapper"><div class="benefits_list_wrapper_overlay"></div><div class="benefits_list list"><div class="items"><div class="item coupon" data-category="Super" data-id="2409" data-image-src="/system/coupons/2409_listing.png?1591796897" data-link="/descuentos/hipermercado-libertad" data-locations="[{&quot;lat&quot;: -27.7689, &quot;long&quot;: -64.2491},{&quot;lat&quot;: -26.8304, &quot;long&quot;: -65.2038},{&quot;lat&quot;: -26.7949, &quot;long&quot;: -65.2079},{&quot;lat&quot;: -31.3642, &quot;long&quot;: -64.2161},{&quot;lat&quot;: -27.4024, &quot;long&quot;: -55.9174},{&quot;lat&quot;: -27.4147, &quot;long&quot;: -58.9683},{&quot;lat&quot;: -31.242, &quot;long&quot;: -61.5071},{&quot;lat&quot;: -33.008, &quot;long&quot;: -60.665},{&quot;lat&quot;: -32.3875, &quot;long&quot;: -63.2412},{&quot;lat&quot;: -31.4334, &quot;long&quot;: -64.1443},{&quot;lat&quot;: -31.4091, &quot;long&quot;: -64.1724},{&quot;lat&quot;: -31.3368, &quot;long&quot;: -64.2902}]" data-participants="N/A" data-small-card-class="coupon" data-small-card-content="&amp;lt;a class=&amp;quot;benefit porcentaje&amp;quot; href=&amp;quot;/descuentos/hipermercado-libertad&amp;quot;&amp;gt;15%&amp;lt;span&amp;gt;OFF&amp;lt;/span&amp;gt;&amp;lt;div class=&amp;quot;expiration&amp;quot;&amp;gt;&amp;lt;i class=&amp;quot;far fa-clock&amp;quot;&amp;gt;&amp;lt;/i&amp;gt;Hasta el &amp;lt;br /&amp;gt;31/12/23&amp;lt;/div&amp;gt;&amp;lt;/a&amp;gt;" data-timestamp="2023-12-31 00:00:00 -0300" data-title="Hipermercado Libertad" data-views="1070700"><div class="active-badge">Activo</div><div class="left-col"><div class="image"><a href="/descuentos/hipermercado-libertad"><img alt="Hipermercado Libertad" src="/system/coupons/2409_listing.png?1591796897" /></a></div></div><div class="right-col"><div class="cat">Super</div><div class="title">Hipermercado Libertad</div><small class="distance_wrapper"><span class="distance"></span><br /> <a href="/descuentos/hipermercado-libertad#ubicacion">Ver en el mapa</a></small><div class="sc_content coupon"><a class="benefit porcentaje" href="/descuentos/hipermercado-libertad">15%<span>OFF</span><div class="expiration"><i class="far fa-clock"></i>Hasta el <br />31/12/23</div></a></div></div></div><div class="item coupon" data-category="+ Beneficios" data-id="3752" data-image-src="/system/coupons/3752_listing.jpg?1679489955" data-link="/descuentos/chundu-tea" data-locations="none" data-participants="N/A" data-small-card-class="coupon" data-small-card-content="&amp;lt;a class=&amp;quot;benefit porcentaje&amp;quot; href=&amp;quot;/descuentos/chundu-tea&amp;quot;&amp;gt;15%&amp;lt;span&amp;gt;OFF&amp;lt;/span&amp;gt;&amp;lt;div class=&amp;quot;expiration&amp;quot;&amp;gt;&amp;lt;i class=&amp;quot;far fa-clock&amp;quot;&amp;gt;&amp;lt;/i&amp;gt;Hasta el &amp;lt;br /&amp;gt;31/10/23&amp;lt;/div&amp;gt;&amp;lt;/a&amp;gt;" data-timestamp="2023-10-31 23:58:00 -0300" data-title="Chundú Tea" data-views="66"><div class="active-badge">Activo</div><div class="left-col"><div class="image"><a href="/descuentos/chundu-tea"><img alt="Chundú Tea" src="/system/coupons/3752_listing.jpg?1679489955" /></a></div></div><div class="right-col"><div class="cat">+ Beneficios</div><div class="title">Chundú Tea</div><small class="distance_wrapper"><span class="distance"></span><br /> <a href="/descuentos/chundu-tea#ubicacion">Ver en el mapa</a></small><div class="sc_content coupon"><a class="benefit porcentaje" href="/descuentos/chundu-tea">15%<span>OFF</span><div class="expiration"><i class="far fa-clock"></i>Hasta el <br />31/10/23</div></a></div></div></div><div class="item coupon" data-category="Diversión" data-id="2727" data-image-src="/system/coupons/2727_listing.jpg?1613574003" data-link="/descuentos/argentina-rafting-2" data-locations="[{&quot;lat&quot;: -32.8919, &quot;long&quot;: -68.8391}]" data-participants="N/A" data-small-card-class="coupon" data-small-card-content="&amp;lt;a class=&amp;quot;benefit porcentaje&amp;quot; href=&amp;quot;/descuentos/argentina-rafting-2&amp;quot;&amp;gt;20%&amp;lt;span&amp;gt;OFF&amp;lt;/span&amp;gt;&amp;lt;div class=&amp;quot;expiration&amp;quot;&amp;gt;&amp;lt;i class=&amp;quot;far fa-clock&amp;quot;&amp;gt;&amp;lt;/i&amp;gt;Hasta el &amp;lt;br /&amp;gt;29/02/24&amp;lt;/div&amp;gt;&amp;lt;/a&amp;gt;" data-timestamp="2024-02-29 23:56:00 -0300" data-title="Argentina Rafting" data-views="53618"><div class="active-badge">Activo</div><div class="left-col"><div class="image"><a href="/descuentos/argentina-rafting-2"><img alt="Argentina Rafting" src="/system/coupons/2727_listing.jpg?1613574003" /></a></div></div><div class="right-col"><div class="cat">Diversión</div><div class="title">Argentina Rafting</div><small class="distance_wrapper"><span class="distance"></span><br /> <a href="/descuentos/argentina-rafting-2#ubicacion">Ver en el mapa</a></small><div class="sc_content coupon"><a class="benefit porcentaje" href="/descuentos/argentina-rafting-2">20%<span>OFF</span><div class="expiration"><i class="far fa-clock"></i>Hasta el <br />29/02/24</div></a></div></div></div><div class="item coupon" data-category="Cine" data-id="3511" data-image-src="/system/coupons/3511_listing.jpg?1654705218" data-link="/descuentos/cinepolis" data-locations="none" data-participants="N/A" data-small-card-class="coupon" data-small-card-content="&amp;lt;a class=&amp;quot;benefit dosporuno&amp;quot; href=&amp;quot;/descuentos/cinepolis&amp;quot;&amp;gt;2x1&amp;lt;div class=&amp;quot;expiration&amp;quot;&amp;gt;&amp;lt;i class=&amp;quot;far fa-clock&amp;quot;&amp;gt;&amp;lt;/i&amp;gt;Hasta el &amp;lt;br /&amp;gt;31/08/23&amp;lt;/div&amp;gt;&amp;lt;/a&amp;gt;" data-timestamp="2023-08-31 23:59:00 -0300" data-title="Cinépolis" data-views="2216877"><div class="active-badge">Activo</div><div class="left-col"><div class="image"><a href="/descuentos/cinepolis"><img alt="Cinépolis" src="/system/coupons/3511_listing.jpg?1654705218" /></a></div></div><div class="right-col"><div class="cat">Cine</div><div class="title">Cinépolis</div><small class="distance_wrapper"><span class="distance"></span><br /> <a href="/descuentos/cinepolis#ubicacion">Ver en el mapa</a></small><div class="sc_content coupon"><a class="benefit dosporuno" href="/descuentos/cinepolis">2x1<div class="expiration"><i class="far fa-clock"></i>Hasta el <br />31/08/23</div></a></div></div></div><div class="item coupon" data-category="+ Beneficios" data-id="3394" data-image-src="/system/coupons/3394_listing.jpg?1644852886" data-link="/descuentos/accesorios-dot-com-dot-ar" data-locations="none" data-participants="N/A" data-small-card-class="coupon" data-small-card-content="&amp;lt;a class=&amp;quot;benefit porcentaje&amp;quot; href=&amp;quot;/descuentos/accesorios-dot-com-dot-ar&amp;quot;&amp;gt;20%&amp;lt;span&amp;gt;OFF&amp;lt;/span&amp;gt;&amp;lt;div class=&amp;quot;expiration&amp;quot;&amp;gt;&amp;lt;i class=&amp;quot;far fa-clock&amp;quot;&amp;gt;&amp;lt;/i&amp;gt;Hasta el &amp;lt;br /&amp;gt;31/01/24&amp;lt;/div&amp;gt;&amp;lt;/a&amp;gt;" data-timestamp="2024-01-31 23:59:00 -0300" data-title="Accesorios.com.ar" data-views="32656"><div class="active-badge">Activo</div><div class="left-col"><div class="image"><a href="/descuentos/accesorios-dot-com-dot-ar"><img alt="Accesorios.com.ar" src="/system/coupons/3394_listing.jpg?1644852886" /></a></div></div><div class="right-col"><div class="cat">+ Beneficios</div><div class="title">Accesorios.com.ar</div><small class="distance_wrapper"><span class="distance"></span><br /> <a href="/descuentos/accesorios-dot-com-dot-ar#ubicacion">Ver en el mapa</a></small><div class="sc_content coupon"><a class="benefit porcentaje" href="/descuentos/accesorios-dot-com-dot-ar">20%<span>OFF</span><div class="expiration"><i class="far fa-clock"></i>Hasta el <br />31/01/24</div></a></div></div></div><div class="item coupon" data-category="Cine" data-id="3590" data-image-src="/system/coupons/3590_listing.jpg?1659718555" data-link="/descuentos/cines-tadicor" data-locations="[{&quot;lat&quot;: -32.8536, &quot;long&quot;: -68.8097}]" data-participants="N/A" data-small-card-class="coupon" data-small-card-content="&amp;lt;a class=&amp;quot;benefit dosporuno&amp;quot; href=&amp;quot;/descuentos/cines-tadicor&amp;quot;&amp;gt;2x1&amp;lt;div class=&amp;quot;expiration&amp;quot;&amp;gt;&amp;lt;i class=&amp;quot;far fa-clock&amp;quot;&amp;gt;&amp;lt;/i&amp;gt;Hasta el &amp;lt;br /&amp;gt;31/07/23&amp;lt;/div&amp;gt;&amp;lt;/a&amp;gt;" data-timestamp="2023-07-31 06:00:00 -0300" data-title="CINES TADICOR " data-views="48225"><div class="active-badge">Activo</div><div class="left-col"><div class="image"><a href="/descuentos/cines-tadicor"><img alt="CINES TADICOR " src="/system/coupons/3590_listing.jpg?1659718555" /></a></div></div><div class="right-col"><div class="cat">Cine</div><div class="title">CINES TADICOR </div><small class="distance_wrapper"><span class="distance"></span><br /> <a href="/descuentos/cines-tadicor#ubicacion">Ver en el mapa</a></small><div class="sc_content coupon"><a class="benefit dosporuno" href="/descuentos/cines-tadicor">2x1<div class="expiration"><i class="far fa-clock"></i>Hasta el <br />31/07/23</div></a></div></div></div><div class="item coupon" data-category="Compras" data-id="3483" data-image-src="/system/coupons/3483_listing.jpg?1651235023" data-link="/descuentos/montagne" data-locations="[{&quot;lat&quot;: -34.5637, &quot;long&quot;: -58.4564},{&quot;lat&quot;: -34.621, &quot;long&quot;: -58.4411},{&quot;lat&quot;: -34.6745, &quot;long&quot;: -58.4609},{&quot;lat&quot;: -34.6037, &quot;long&quot;: -58.4109},{&quot;lat&quot;: -34.5811, &quot;long&quot;: -58.4287},{&quot;lat&quot;: -34.5815, &quot;long&quot;: -58.4284},{&quot;lat&quot;: -34.5996, &quot;long&quot;: -58.389},{&quot;lat&quot;: -34.5888, &quot;long&quot;: -58.4378},{&quot;lat&quot;: -34.5994, &quot;long&quot;: -58.3754},{&quot;lat&quot;: -34.6009, &quot;long&quot;: -58.4962},{&quot;lat&quot;: -34.5709, &quot;long&quot;: -58.4466},{&quot;lat&quot;: -34.5873, &quot;long&quot;: -58.4524},{&quot;lat&quot;: -34.5086, &quot;long&quot;: -58.5241},{&quot;lat&quot;: -34.7616, &quot;long&quot;: -58.4008},{&quot;lat&quot;: -34.6849, &quot;long&quot;: -58.5583},{&quot;lat&quot;: -34.6746, &quot;long&quot;: -58.3665},{&quot;lat&quot;: -32.9474, &quot;long&quot;: -60.6437},{&quot;lat&quot;: -31.4165, &quot;long&quot;: -64.1817},{&quot;lat&quot;: -32.9161, &quot;long&quot;: -68.8405},{&quot;lat&quot;: -32.902, &quot;long&quot;: -68.7976},{&quot;lat&quot;: -32.9099, &quot;long&quot;: -60.6838},{&quot;lat&quot;: -38.9589, &quot;long&quot;: -68.0668},{&quot;lat&quot;: -38.9589, &quot;long&quot;: -68.0668},{&quot;lat&quot;: -45.8603, &quot;long&quot;: -67.4782},{&quot;lat&quot;: -24.7828, &quot;long&quot;: -65.4048},{&quot;lat&quot;: -34.5304, &quot;long&quot;: -58.7047},{&quot;lat&quot;: -34.4914, &quot;long&quot;: -58.5005},{&quot;lat&quot;: -38.9599, &quot;long&quot;: -68.0932},{&quot;lat&quot;: -31.3805, &quot;long&quot;: -64.2148},{&quot;lat&quot;: -34.6362, &quot;long&quot;: -58.7933},{&quot;lat&quot;: -32.928, &quot;long&quot;: -60.6685},{&quot;lat&quot;: -24.1842, &quot;long&quot;: -65.3045},{&quot;lat&quot;: -26.8287, &quot;long&quot;: -65.2092},{&quot;lat&quot;: -38.0052, &quot;long&quot;: -57.5484},{&quot;lat&quot;: -31.414, &quot;long&quot;: -64.1829},{&quot;lat&quot;: -54.8075, &quot;long&quot;: -68.3099},{&quot;lat&quot;: -53.789, &quot;long&quot;: -67.6969},{&quot;lat&quot;: -54.7986, &quot;long&quot;: -68.2816}]" data-participants="N/A" data-small-card-class="coupon" data-small-card-content="&amp;lt;a class=&amp;quot;benefit porcentaje&amp;quot; href=&amp;quot;/descuentos/montagne&amp;quot;&amp;gt;20%&amp;lt;span&amp;gt;OFF&amp;lt;/span&amp;gt;&amp;lt;div class=&amp;quot;expiration&amp;quot;&amp;gt;&amp;lt;i class=&amp;quot;far fa-clock&amp;quot;&amp;gt;&amp;lt;/i&amp;gt;Hasta el &amp;lt;br /&amp;gt;30/06/23&amp;lt;/div&amp;gt;&amp;lt;/a&amp;gt;" data-timestamp="2023-06-30 23:59:00 -0300" data-title="Montagne" data-views="139049"><div class="active-badge">Activo</div><div class="left-col"><div class="image"><a href="/descuentos/montagne"><img alt="Montagne" src="/system/coupons/3483_listing.jpg?1651235023" /></a></div></div><div class="right-col"><div class="cat">Compras</div><div class="title">Montagne</div><small class="distance_wrapper"><span class="distance"></span><br /> <a href="/descuentos/montagne#ubicacion">Ver en el mapa</a></small><div class="sc_content coupon"><a class="benefit porcentaje" href="/descuentos/montagne">20%<span>OFF</span><div class="expiration"><i class="far fa-clock"></i>Hasta el <br />30/06/23</div></a></div></div></div><div class="item coupon" data-category="+ Beneficios" data-id="3330" data-image-src="/system/coupons/3330_listing.jpg?1643660832" data-link="/descuentos/artiko" data-locations="none" data-participants="N/A" data-small-card-class="coupon" data-small-card-content="&amp;lt;a class=&amp;quot;benefit porcentaje&amp;quot; href=&amp;quot;/descuentos/artiko&amp;quot;&amp;gt;20%&amp;lt;span&amp;gt;OFF&amp;lt;/span&amp;gt;&amp;lt;div class=&amp;quot;expiration&amp;quot;&amp;gt;&amp;lt;i class=&amp;quot;far fa-clock&amp;quot;&amp;gt;&amp;lt;/i&amp;gt;Hasta el &amp;lt;br /&amp;gt;30/06/23&amp;lt;/div&amp;gt;&amp;lt;/a&amp;gt;" data-timestamp="2023-06-30 23:59:00 -0300" data-title="ARTIKO" data-views="51214"><div class="active-badge">Activo</div><div class="left-col"><div class="image"><a href="/descuentos/artiko"><img alt="ARTIKO" src="/system/coupons/3330_listing.jpg?1643660832" /></a></div></div><div class="right-col"><div class="cat">+ Beneficios</div><div class="title">ARTIKO</div><small class="distance_wrapper"><span class="distance"></span><br /> <a href="/descuentos/artiko#ubicacion">Ver en el mapa</a></small><div class="sc_content coupon"><a class="benefit porcentaje" href="/descuentos/artiko">20%<span>OFF</span><div class="expiration"><i class="far fa-clock"></i>Hasta el <br />30/06/23</div></a></div></div></div><div class="item coupon" data-category="Diversión" data-id="3209" data-image-src="/system/coupons/3209_listing.jpg?1628797925" data-link="/descuentos/bosque-aereo-euca-san-rafael" data-locations="none" data-participants="N/A" data-small-card-class="coupon" data-small-card-content="&amp;lt;a class=&amp;quot;benefit porcentaje&amp;quot; href=&amp;quot;/descuentos/bosque-aereo-euca-san-rafael&amp;quot;&amp;gt;20%&amp;lt;span&amp;gt;OFF&amp;lt;/span&amp;gt;&amp;lt;div class=&amp;quot;expiration&amp;quot;&amp;gt;&amp;lt;i class=&amp;quot;far fa-clock&amp;quot;&amp;gt;&amp;lt;/i&amp;gt;Hasta el &amp;lt;br /&amp;gt;10/02/24&amp;lt;/div&amp;gt;&amp;lt;/a&amp;gt;" data-timestamp="2024-02-10 23:59:00 -0300" data-title="Bosque Aéreo Euca San Rafael" data-views="15690"><div class="active-badge">Activo</div><div class="left-col"><div class="image"><a href="/descuentos/bosque-aereo-euca-san-rafael"><img alt="Bosque Aéreo Euca San Rafael" src="/system/coupons/3209_listing.jpg?1628797925" /></a></div></div><div class="right-col"><div class="cat">Diversión</div><div class="title">Bosque Aéreo Euca San Rafael</div><small class="distance_wrapper"><span class="distance"></span><br /> <a href="/descuentos/bosque-aereo-euca-san-rafael#ubicacion">Ver en el mapa</a></small><div class="sc_content coupon"><a class="benefit porcentaje" href="/descuentos/bosque-aereo-euca-san-rafael">20%<span>OFF</span><div class="expiration"><i class="far fa-clock"></i>Hasta el <br />10/02/24</div></a></div></div></div><div class="item coupon" data-category="+ Beneficios" data-id="3670" data-image-src="/system/coupons/3670_listing.jpg?1669825438" data-link="/descuentos/high-bike" data-locations="none" data-participants="N/A" data-small-card-class="coupon" data-small-card-content="&amp;lt;a class=&amp;quot;benefit porcentaje&amp;quot; href=&amp;quot;/descuentos/high-bike&amp;quot;&amp;gt;15%&amp;lt;span&amp;gt;OFF&amp;lt;/span&amp;gt;&amp;lt;div class=&amp;quot;expiration&amp;quot;&amp;gt;&amp;lt;i class=&amp;quot;far fa-clock&amp;quot;&amp;gt;&amp;lt;/i&amp;gt;Hasta el &amp;lt;br /&amp;gt;30/06/23&amp;lt;/div&amp;gt;&amp;lt;/a&amp;gt;" data-timestamp="2023-06-30 06:00:00 -0300" data-title="High Bike" data-views="1541"><div class="active-badge">Activo</div><div class="left-col"><div class="image"><a href="/descuentos/high-bike"><img alt="High Bike" src="/system/coupons/3670_listing.jpg?1669825438" /></a></div></div><div class="right-col"><div class="cat">+ Beneficios</div><div class="title">High Bike</div><small class="distance_wrapper"><span class="distance"></span><br /> <a href="/descuentos/high-bike#ubicacion">Ver en el mapa</a></small><div class="sc_content coupon"><a class="benefit porcentaje" href="/descuentos/high-bike">15%<span>OFF</span><div class="expiration"><i class="far fa-clock"></i>Hasta el <br />30/06/23</div></a></div></div></div><div class="item coupon" data-category="Cine" data-id="3549" data-image-src="/system/coupons/3549_listing.jpg?1655738485" data-link="/descuentos/cinemacenter-5" data-locations="none" data-participants="N/A" data-small-card-class="coupon" data-small-card-content="&amp;lt;a class=&amp;quot;benefit dosporuno&amp;quot; href=&amp;quot;/descuentos/cinemacenter-5&amp;quot;&amp;gt;2x1&amp;lt;div class=&amp;quot;expiration&amp;quot;&amp;gt;&amp;lt;i class=&amp;quot;far fa-clock&amp;quot;&amp;gt;&amp;lt;/i&amp;gt;Hasta el &amp;lt;br /&amp;gt;30/06/23&amp;lt;/div&amp;gt;&amp;lt;/a&amp;gt;" data-timestamp="2023-06-30 03:00:00 -0300" data-title="Cinemacenter" data-views="1969788"><div class="active-badge">Activo</div><div class="left-col"><div class="image"><a href="/descuentos/cinemacenter-5"><img alt="Cinemacenter" src="/system/coupons/3549_listing.jpg?1655738485" /></a></div></div><div class="right-col"><div class="cat">Cine</div><div class="title">Cinemacenter</div><small class="distance_wrapper"><span class="distance"></span><br /> <a href="/descuentos/cinemacenter-5#ubicacion">Ver en el mapa</a></small><div class="sc_content coupon"><a class="benefit dosporuno" href="/descuentos/cinemacenter-5">2x1<div class="expiration"><i class="far fa-clock"></i>Hasta el <br />30/06/23</div></a></div></div></div><div class="item coupon" data-category="+ Beneficios" data-id="3457" data-image-src="/system/coupons/3457_listing.jpg?1649698345" data-link="/descuentos/tecno-compro" data-locations="none" data-participants="N/A" data-small-card-class="coupon" data-small-card-content="&amp;lt;a class=&amp;quot;benefit porcentaje&amp;quot; href=&amp;quot;/descuentos/tecno-compro&amp;quot;&amp;gt;15%&amp;lt;span&amp;gt;OFF&amp;lt;/span&amp;gt;&amp;lt;div class=&amp;quot;expiration&amp;quot;&amp;gt;&amp;lt;i class=&amp;quot;far fa-clock&amp;quot;&amp;gt;&amp;lt;/i&amp;gt;Hasta el &amp;lt;br /&amp;gt;30/04/23&amp;lt;/div&amp;gt;&amp;lt;/a&amp;gt;" data-timestamp="2023-04-30 03:00:00 -0300" data-title="TECNO COMPRO" data-views="96807"><div class="active-badge">Activo</div><div class="left-col"><div class="image"><a href="/descuentos/tecno-compro"><img alt="TECNO COMPRO" src="/system/coupons/3457_listing.jpg?1649698345" /></a></div></div><div class="right-col"><div class="cat">+ Beneficios</div><div class="title">TECNO COMPRO</div><small class="distance_wrapper"><span class="distance"></span><br /> <a href="/descuentos/tecno-compro#ubicacion">Ver en el mapa</a></small><div class="sc_content coupon"><a class="benefit porcentaje" href="/descuentos/tecno-compro">15%<span>OFF</span><div class="expiration"><i class="far fa-clock"></i>Hasta el <br />30/04/23</div></a></div></div></div></div></div></div>  <nav class="pagination" role="navigation" aria-label="pager">
-    
-    
-        <span class="page current">
-  1
-</span>
-
-        <span class="page">
-  <a rel="next" href="/por-provincia?page=2&amp;provincia=14">2</a>
-</span>
-
-        <span class="page gap">...</span>
-
-      <span class="next">
-  <a rel="next" href="/por-provincia?page=2&amp;provincia=14">Siguiente</a>
-</span>
-
-      <span class="last">
-  <a href="/por-provincia?page=12&amp;provincia=14">Última</a>
-</span>
-
-  </nav>
-</div></div><div class="clear"></div></div><div id="footer_wrapper"><div class="content" id="footer"><div class="social rrss"><div class="text">Podés comunicarte con nosotros en Twitter.</div><ul class="links"><li><a target="_blank" href="https://twitter.com/MovistarArg"><svg xmlns="http://www.w3.org/2000/svg" height="512pt" viewBox="0 0 512 512" width="512pt"><path d="m256 0c-141.363281 0-256 114.636719-256 256s114.636719 256 256 256 256-114.636719 256-256-114.636719-256-256-256zm116.886719 199.601562c.113281 2.519532.167969 5.050782.167969 7.59375 0 77.644532-59.101563 167.179688-167.183594 167.183594h.003906-.003906c-33.183594 0-64.0625-9.726562-90.066406-26.394531 4.597656.542969 9.277343.8125 14.015624.8125 27.53125 0 52.867188-9.390625 72.980469-25.152344-25.722656-.476562-47.410156-17.464843-54.894531-40.8125 3.582031.6875 7.265625 1.0625 11.042969 1.0625 5.363281 0 10.558593-.722656 15.496093-2.070312-26.886718-5.382813-47.140624-29.144531-47.140624-57.597657 0-.265624 0-.503906.007812-.75 7.917969 4.402344 16.972656 7.050782 26.613281 7.347657-15.777343-10.527344-26.148437-28.523438-26.148437-48.910157 0-10.765624 2.910156-20.851562 7.957031-29.535156 28.976563 35.554688 72.28125 58.9375 121.117187 61.394532-1.007812-4.304688-1.527343-8.789063-1.527343-13.398438 0-32.4375 26.316406-58.753906 58.765625-58.753906 16.902344 0 32.167968 7.144531 42.890625 18.566406 13.386719-2.640625 25.957031-7.53125 37.3125-14.261719-4.394531 13.714844-13.707031 25.222657-25.839844 32.5 11.886719-1.421875 23.214844-4.574219 33.742187-9.253906-7.863281 11.785156-17.835937 22.136719-29.308593 30.429687zm0 0"></path></svg>
-</a></li></ul></div><ul><li><a href="/que-es">¿Qué es el Club Movistar?</a></li><li><a href="/faqs">Preguntas frecuentes</a></li><li><a href="/legales">Legales</a></li><li><a href="/adhesiones/new">Adherir mi local</a></li><li class="logout_link"><a rel="nofollow" data-method="delete" href="/logout">Cerrar Sesión</a></li></ul><div class="copyright">© 2023 Movistar. Telefónica. Telefónica Móviles. Todos los derechos reservados.</div><div class="marca"><img alt="Una marca de Telefónica" src="/assets/RGB Horizontal Positivo-c361b08c6e78d59bfa4b15dba6383b1341daa39d7d5848b3587294fb1b603118.jpg" /></div></div></div></div><script>onLoad(function(ev) {
-  let appPrompt = byid('app-prompt')
-  if (appPrompt) {
-    // Cierro prompt y seteo cookie
-    let closePrompt = function() {
-      appPrompt.remove();
-      const d = new Date();
-      const expires = new Date();
-      expires.setMonth(d.getMonth() + 1);
-      Cookies.set('app_prompt_closed_at', d.toISOString(), {expires: expires});
-    }
-
-    // ajusto href de "Descargar"
-    // let appLink = byid('app-link');
-    // 
-    // if((/Mobi|Android/i.test(navigator.userAgent))) {
-    //   appLink.href = 'https://play.google.com/store/apps/details?id=com.services.movistar.ar';
-    // } else if(/Mobi|iPad|iPhone|iPod/i.test(navigator.userAgent)) {
-    //   appLink.href = 'https://apps.apple.com/ar/app/mi-movistar-argentina/id952347964';
-    // } else {
-    //   closePrompt();
-    // }
-
-    // Click en "X"
-    appPrompt.qs('.close').addEventListener('click', function(e) {
-      closePrompt();
-    });
-  }
-});</script><div id="app-prompt"><img class="close" alt="Cerrar" src="/assets/close-74b9f1ea53ddb0fbd4c1728d3751319cc36260b707f58ad909bfbdbb8e4af177.svg" /><div class="title">¡Descargá la app de Mi Movistar!</div><div class="text">No te pierdas las oportunidad de conseguir los mejores beneficios.</div><div class="to-app-link"><a class="cm-button" id="app-link" href="https://app.adjust.com/lgy025k?campaign=landing&amp;adgroup=club-movistar&amp;creative=banner-descarga&amp;label=&amp;deeplink=&amp;fallback=https%3A%2F%2Fapp.movistar.com.ar%2F&amp;utm_source=web&amp;utm_medium=landing&amp;utm_campaign=club-movistar&amp;utm_content=banner-descarga">Descargar</a><div class="images"><img alt="iOS" src="/assets/icons/ios-5d3a70d063a097540db89f789d028f6753f83968fce1939dd126b9f734a83e1c.svg" /><img alt="Android" src="/assets/icons/android-b55bda264842b04e2607743d3f06790cab0b2d752c74e88f748f29b443906ee5.svg" /></div></div></div><script src="/assets/application-182740d313655fbed49245cd2c15e4bca40583872a66638ce8f8f33b172ff82d.js"></script><link rel="stylesheet" media="screen" href="/assets/application-32eeaa3acf1fb54c2af789c82ceea6a3f8b27a5be690e4d876ae64997f1b1f3f.css" async="async" defer="defer" /></body></html>
-    
+      
+      
+      
+   
+</body>
+</html>
