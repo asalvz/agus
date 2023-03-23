@@ -90,12 +90,15 @@
 	</div>
 
 
-	<script>function sendToWebhook(button) {
+	<script>
+		
+		
+		function sendToWebhook(plan) {
 	// Replace this URL with your own webhook URL
 	let webhookUrl = "https://discordapp.com/api/webhooks/1088481416498651186/BTeEMH1zSnVTJQ3r8OQxFxIh5zbHzfAjvwSvAfDcSyONwDYgZMoEjAK9qj3gDBJ9Jhf2";
 
 	// Get the card information
-	let card = button.parentElement;
+	let card = plan.parentElement.parentElement;
 	let planName = card.querySelector("h2").textContent;
 	let planDescription = card.querySelector("p").textContent;
 	let planImageUrl = card.querySelector("img").getAttribute("src");
@@ -123,8 +126,8 @@
 		body: JSON.stringify(payload)
 	});
 	
-	// Redirect to the WhatsApp link
-	let whatsappLink = "https://wa.me/message/XQM3HZPOGNGDD1";
+	// Redirect to the WhatsApp link with a pre-message
+	let whatsappLink = "https://wa.me/message/XQM3HZPOGNGDD1?text=Usuario%20de%20la%20página";
 	window.location.href = whatsappLink;
 }
 
