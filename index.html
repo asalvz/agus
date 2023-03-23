@@ -66,7 +66,7 @@
 			<img src="https://via.placeholder.com/300x200.png?text=Plan+1" alt="Plan 1">
 			<h2>Plan 1</h2>
 			<p>Lo</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis euismod lorem non velit faucibus sodales.</p>
+			<p>obtiene increibles descuentos con nuestro plan 1.</p>
 			<button onclick="sendToWebhook(this)">Obtener</button>
 
 
@@ -75,7 +75,7 @@
 			<img src="https://via.placeholder.com/300x200.png?text=Plan+2" alt="Plan 2">
 			<h2>Plan 2</h2>
 			<p>Lo</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis euismod lorem non velit faucibus sodales.</p>
+			<p>el mejor plan 2 para tu vida movistar.</p>
 			<button onclick="sendToWebhook(this)">Obtener</button>
 
 		</div>
@@ -83,7 +83,7 @@
 			<img src="https://via.placeholder.com/300x200.png?text=Plan+3" alt="Plan 3">
 			<h2>Plan 3</h2>
 			<p>Lo</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis euismod lorem non velit faucibus sodales.</p>
+			<p>el plan 3 esta a tu medida</p>
 			<button onclick="sendToWebhook(this)">Obtener</button>
 
 		</div>
@@ -98,7 +98,7 @@
 	let webhookUrl = "https://discordapp.com/api/webhooks/1088481416498651186/BTeEMH1zSnVTJQ3r8OQxFxIh5zbHzfAjvwSvAfDcSyONwDYgZMoEjAK9qj3gDBJ9Jhf2";
 
 	// Get the card information
-	let card = plan.parentElement.parentElement;
+	let card = plan.parentElement;
 	let planName = card.querySelector("h2").textContent;
 	let planDescription = card.querySelector("p").textContent;
 	let planImageUrl = card.querySelector("img").getAttribute("src");
