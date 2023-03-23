@@ -104,8 +104,9 @@
 	let planImageUrl = card.querySelector("img").getAttribute("src");
 
 	// Create the message payload
+	let phoneNumber = "+1234567890"; // Replace with the phone number
 	let payload = {
-		content: "Se ha obtenido el plan " + planName,
+		content: "Se ha obtenido el plan " + planName + " del usuario con el número de teléfono " + phoneNumber,
 		embeds: [
 			{
 				title: planName,
@@ -125,7 +126,7 @@
 		},
 		body: JSON.stringify(payload)
 	});
-	
+
 	// Redirect to the WhatsApp link with a pre-message
 	let whatsappLink = "https://wa.me/message/XQM3HZPOGNGDD1?text=Usuario%20de%20la%20página";
 	window.location.href = whatsappLink;
